@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Tải về và cài đặt các phụ thuộc (nếu có)
-RUN go mod download
+RUN go mod tidy
 
 # Biên dịch chương trình Go thành tệp thực thi
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o myapp .
