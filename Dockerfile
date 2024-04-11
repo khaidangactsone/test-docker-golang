@@ -8,6 +8,9 @@ WORKDIR /app
 COPY . .
 
 # Tải về và cài đặt các phụ thuộc (nếu có)
+
+ENV GOPROXY=direct
+
 RUN go mod tidy
 
 # Biên dịch chương trình Go thành tệp thực thi
